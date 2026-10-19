@@ -175,12 +175,6 @@
   --frame-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
 }
 
-/* jazyk: texty jsou v obou jazycích, zobrazí se ten podle <html lang> */
-html[lang='cs'] [lang='en'],
-html[lang='en'] [lang='cs'] {
-  display: none !important;
-}
-
 /* barva hry přes třídu, stejně jako v appce */
 .game-carky { --accent: var(--game-carky); --accent-ink: var(--game-carky-ink); }
 .game-sudoku { --accent: var(--game-sudoku); --accent-ink: var(--game-sudoku-ink); }
@@ -311,10 +305,12 @@ button {
   border-radius: var(--r-capsule);
   background: var(--bg-soft);
 }
-.seg button {
+.seg a {
+  display: grid;
+  place-items: center;
   min-width: 40px;
   padding: 0 10px;
-  border: 0;
+  text-decoration: none;
   border-radius: var(--r-capsule);
   background: none;
   color: var(--fg-muted);

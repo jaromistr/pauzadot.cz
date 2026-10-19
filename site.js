@@ -1,5 +1,6 @@
-// Přepínač jazyka (CS/EN) a režimu (světlý/tmavý). Výchozí stav nastavuje skript v <head>
+// Přepínač režimu (světlý/tmavý) a uložení volby jazyka. Výchozí stav nastavuje skript v <head>
 // podle uložené volby, jinak podle prohlížeče a systému; tady se jen přepíná a ukládá.
+// Jazyky jsou samostatné stránky (/ a /en/, generuje `npm run site`), přepínač jazyka jsou odkazy.
 
 const root = document.documentElement;
 const systemDark = matchMedia('(prefers-color-scheme: dark)');
@@ -39,32 +40,8 @@ document.querySelector('.theme').addEventListener('click', () => {
 
 // ---------- jazyk ----------
 
-const title = document.querySelector('title');
-const titleCs = title.textContent;
-
-function applyLang() {
-  const lang = root.lang;
-  title.textContent = lang === 'en' ? title.dataset.en : titleCs;
-  for (const img of document.querySelectorAll('img[data-alt-en]')) {
-    img.dataset.altCs ??= img.alt;
-    img.alt = lang === 'en' ? img.dataset.altEn : img.dataset.altCs;
-  }
-  for (const el of document.querySelectorAll('picture source, picture img')) {
-    const attr = el.tagName === 'SOURCE' ? 'srcset' : 'src';
-    el.setAttribute(attr, el.getAttribute(attr).replace(/img\/(cs|en)\//, `img/${lang}/`));
-  }
-  for (const btn of document.querySelectorAll('[data-set-lang]')) {
-    btn.setAttribute('aria-pressed', String(btn.dataset.setLang === lang));
-  }
-}
-
-for (const btn of document.querySelectorAll('[data-set-lang]')) {
-  btn.addEventListener('click', () => {
-    root.lang = btn.dataset.setLang;
-    store('pauza.lang', root.lang);
-    applyLang();
-  });
+for (const link of document.querySelectorAll('[data-set-lang]')) {
+  link.addEventListener('click', () => store('pauza.lang', link.dataset.setLang));
 }
 
 applyTheme();
-applyLang();
