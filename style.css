@@ -535,8 +535,54 @@ html[lang='en'] .seg [data-set-lang='en'] {
   color: var(--fg-subtle);
   font-size: 14px;
 }
+.foot .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
 .foot a { text-decoration: none; }
 .foot a:hover { color: var(--fg); }
+
+/* ---------- textové stránky (podpora, zásady soukromí) ---------- */
+.doc {
+  max-width: 760px;
+  padding-block: 40px 72px;
+}
+.doc h1 {
+  font-size: clamp(44px, 11vw, 72px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.doc h2 {
+  margin-top: 48px;
+  font-size: clamp(24px, 5.2vw, 30px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.doc h3 {
+  margin-top: 28px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.doc p { margin-top: 12px; }
+.doc h3 + p { margin-top: 6px; }
+.doc .meta {
+  margin-top: 16px;
+  color: var(--fg-subtle);
+  font-size: 15px;
+}
+.doc .lead {
+  margin-top: 24px;
+  font-size: 20px;
+  line-height: 1.45;
+}
+.doc .note {
+  margin-top: 48px;
+  color: var(--fg-muted);
+}
+.doc a { text-underline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

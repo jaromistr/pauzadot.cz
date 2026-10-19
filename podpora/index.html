@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Podpora – pauza.</title>
+  <meta name="description" content="Podpora appky pauza.: kontakt a odpovědi na časté otázky.">
+  <meta property="og:title" content="Podpora – pauza.">
+  <meta property="og:description" content="Kontakt a odpovědi na časté otázky k appce pauza.">
+  <!-- Ještě před vykreslením: režim podle uložené volby (jinak systém) a jazyk – při příchodu zvenku
+       přesměruje na verzi podle uložené volby, jinak podle jazyka prohlížeče. Vyhledávače se nepřesměrují. -->
+  <script>
+    (function () {
+      var d = document.documentElement, theme = null, lang = null;
+      try { theme = localStorage.getItem('pauza.theme'); lang = localStorage.getItem('pauza.lang'); } catch (e) {}
+      if (theme === 'light' || theme === 'dark') d.setAttribute('data-theme', theme);
+      var inside = document.referrer.indexOf(location.origin + '/') === 0;
+      if (inside || /bot|crawl|spider|slurp|facebookexternalhit|preview|lighthouse/i.test(navigator.userAgent)) return;
+      if (lang !== 'cs' && lang !== 'en') {
+        lang = 'en';
+        var prefs = navigator.languages || [navigator.language || ''];
+        for (var i = 0; i < prefs.length; i++) {
+          if (/^(cs|sk)\b/i.test(prefs[i])) { lang = 'cs'; break; }
+          if (/^en\b/i.test(prefs[i])) break;
+        }
+      }
+      if (lang !== d.lang) location.replace(lang === 'en' ? '/en/support/' : '/podpora/');
+    })();
+  </script>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" data-scheme="light">
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" data-scheme="dark">
+  <link rel="canonical" href="https://pauzadot.cz/podpora/">
+  <link rel="alternate" hreflang="cs" href="https://pauzadot.cz/podpora/">
+  <link rel="alternate" hreflang="en" href="https://pauzadot.cz/en/support/">
+  <link rel="alternate" hreflang="x-default" href="https://pauzadot.cz/en/support/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/img/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/site.js" defer></script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="pauza.">
+  <meta property="og:url" content="https://pauzadot.cz/podpora/">
+  <meta property="og:image" content="https://pauzadot.cz/img/og-cs.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<!-- Vygenerováno `npm run site` ze site-src/page.html – neupravovat ručně. -->
+
+<header class="wrap top">
+  <a class="logo" href="/">pauza<span class="dot">.</span></a>
+  <div class="controls">
+    <button class="icon-btn theme" type="button">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <span class="vh">Přepnout světlý a tmavý režim</span>
+    </button>
+    <nav class="seg" aria-label="Jazyk / Language">
+      <a href="/podpora/" hreflang="cs" data-set-lang="cs" aria-current="page">CS</a>
+      <a href="/en/support/" hreflang="en" data-set-lang="en">EN</a>
+    </nav>
+    <a class="ig" href="https://www.instagram.com/pauzadot/" rel="me noopener" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+      <span class="label">pauzadot</span><span class="vh">Instagram</span>
+    </a>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <h1>Podpora<span class="dot">.</span></h1>
+  <p class="lead">Něco nefunguje, máš nápad na novou hru, nebo jen chceš napsat? Napiš na <a href="mailto:hello@pauzadot.cz">hello@pauzadot.cz</a>. Odpovídáme zpravidla do pár dní.</p>
+  <p>Když hlásíš chybu, pomůže nám model iPhonu, verze iOS, hra a obtížnost a co se stalo (ideálně se snímkem obrazovky).</p>
+
+  <h2>Časté otázky</h2>
+
+  <h3>Potřebuje appka internet?</h3>
+  <p>Ne. Všechny hry fungují úplně offline – v letadle, v metru i bez signálu.</p>
+
+  <h3>Je appka opravdu zdarma?</h3>
+  <p>Ano. Žádné reklamy, žádné nákupy v aplikaci, žádný účet.</p>
+
+  <h3>Jak se hraje?</h3>
+  <p>Každá hra má na úvodní obrazovce návod „Jak hrát“. Když si nevíš rady, nápověda ukáže další krok a vysvětlí proč: čárkovaný rámeček je důvod, kroužek v barvě hry je cíl.</p>
+
+  <h3>Jak se počítají hvězdičky?</h3>
+  <p>Za rychlost. Každé zadání má cílový čas: ★★★ do cílového času, ★★ do 1,5×, ★ do 2,5×. Každá nápověda přidá 15 sekund. Ve hře last. se hraje proti soupeři, takže tam hvězdičky nejsou.</p>
+
+  <h3>Kde jsou uložené moje hvězdičky a statistiky?</h3>
+  <p>Jen v tvém telefonu. Když appku smažeš, smažou se s ní. Vrátí se jen obnovením celé zálohy iPhonu.</p>
+
+  <h3>Na jakých zařízeních appka běží?</h3>
+  <p>Na iPhonu s iOS 18.6 nebo novějším.</p>
+
+  <p class="note">Jak zacházíme s daty, popisují <a href="/soukromi/">zásady soukromí</a>.</p>
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 pauza<span class="dot">.</span></span>
+  <nav class="links">
+    <a href="/podpora/">Podpora</a>
+    <a href="/soukromi/">Zásady soukromí</a>
+    <a href="https://www.instagram.com/pauzadot/" rel="noopener" target="_blank">Instagram</a>
+  </nav>
+</footer>
+
+</body>
+</html>
