@@ -33,6 +33,7 @@
   --edge: #1e1d1b; /* obrys hrací plochy a hranice oblastí */
   --hair: rgba(30, 29, 27, 0.12); /* jemné čáry uvnitř plochy */
   --scrim: rgba(20, 20, 18, 0.42);
+  --on-accent: #ffffff; /* text a ikony na barvě hry a na bad (v obou režimech bílá) */
 
   --player-1: #2f64a8;
   --player-2: #e8604c;
@@ -64,6 +65,8 @@
   --q9: #b7becb;
   --q-ink: #1e1d1b;
 
+  --r-chip: 3px;
+  --r-xs: 4px;
   --r-sm: 8px;
   --r-md: 12px;
   --r-capsule: 999px;
