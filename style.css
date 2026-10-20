@@ -373,7 +373,12 @@ html[lang='en'] .seg [data-set-lang='en'] {
   margin-top: 32px;
 }
 
-/* tlačítko obchodu – zatím „brzy“; po vydání nahradit oficiálním odznakem App Store */
+/* oficiální odznak App Storu (Apple Marketing Tools) – neupravovat, jen velikost; výška ≥ 40 px */
+.badge { display: inline-block; line-height: 0; border-radius: 9px; }
+.badge img { display: block; height: 56px; width: auto; }
+.badge:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+
+/* tlačítko (404 → „Na úvod“) */
 .store {
   display: inline-flex;
   align-items: center;
